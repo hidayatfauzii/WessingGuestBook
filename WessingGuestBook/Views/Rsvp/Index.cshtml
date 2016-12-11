@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WessingGuestBook.Models.bukutamu>
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Reservation";
+    Layout = "~/Views/Shared/_Reservation.cshtml";
+}
+
+@*<h2>Buku Tamu</h2>*@
+
+<section id="content">
+    <div class="container_24">
+        <div class="grid_24">
+            <div class="top-1">
+                <h2><strong>Buku</strong> Tamu:</h2>
+                <div class="box-4 wrap">
+                    @foreach (var item in Model)
+                    {
+                        <div class="fleft">
+                            <div class="box-1">
+                                <img src="~/Images/@item.pict" alt="" class="img-border img-indent" style="width:108px;height:125px">
+                                <div class="extra-wrap">
+                                    <p class="text-1"><strong>@item.nama</strong><br /></p>
+                                    <p class="text-2">Mengucapkan:</p>
+                                </div>
+                            </div>
+                            <div class="comments-4">
+                                <div class="comments-corner"></div>
+                                <div class="comment-1">
+                                    <div class="comment-2">
+                                        <p class="text-4">@item.pesan </p>
+                                    </div>
+                                </div>
+                            </div>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                        </div>
+                      
+                    }
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+</section>
+
+<footer>
+    <p>
+        <strong>© 2016 Mukidi &amp; Tumini</strong><br>
+    </p>
+    <div class="soc-icons"><a href="#"><img src="@Url.Content("~/Content/mytemplate/")images/icon-1.png" alt=""></a><a href="#"><img src="@Url.Content("~/Content/mytemplate/")images/icon-2.png" alt=""></a><a href="#"><img src="@Url.Content("~/Content/mytemplate/")images/icon-3.png" alt=""></a></div>
+</footer>
+
+
+
+
+

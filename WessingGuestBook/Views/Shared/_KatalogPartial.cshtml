@@ -1,0 +1,18 @@
+﻿@model WessingGuestBook.Models.bukutamu
+
+
+<div class="col-sm-4 col-lg-4 colmd-4">
+    <div class="thumbnail">
+        <img src="~/Images/@Model.pict" style="width:250px;height:250px" alt="@Model.nama" /><br />
+        <strong>@Model.nama</strong><br />
+        <em>Pesan: </em>@Model.pesan <br />
+        <em>add Date: </em>@Model.tanggal<br />
+
+        { @Html.ActionLink("Edit", "Edit", "Product",
+                new { id = Model.id }, new { @class = "btn-sm btn-info" })
+        @Html.ActionLink("Hapus", "Delete", "Product",
+                new { id = Model.id }, new { @class = "btn-sm btn-warning" })
+        }
+
+    </div>
+</div>

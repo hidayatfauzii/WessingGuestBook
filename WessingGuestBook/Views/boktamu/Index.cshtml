@@ -1,0 +1,14 @@
+﻿@model WessingGuestBook.Models.bukutamu
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="row">
+    @foreach (var bukutamu in Model.nama)
+    {
+        @Html.Partial("_KatalogPartial", bukutamu)
+    }
+</div>
